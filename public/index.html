@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Finance Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center text-blue-600">API Finance Documentation</h1>
+
+        <!-- Autenticación -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Autenticación</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/auth/register</code>
+                </div>
+                <p class="text-gray-600 mt-2">Registrar un nuevo usuario</p>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/auth/login</code>
+                </div>
+                <p class="text-gray-600 mt-2">Iniciar sesión</p>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/auth/me</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener información del usuario actual</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roles -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Roles</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/roles</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener todos los roles</p>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/roles/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener un rol específico</p>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/roles</code>
+                </div>
+                <p class="text-gray-600 mt-2">Crear un nuevo rol</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-yellow-100 text-yellow-700">PUT</span>
+                    <code class="text-gray-700 font-mono">/api/roles/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Actualizar un rol</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-red-100 text-red-700">DELETE</span>
+                    <code class="text-gray-700 font-mono">/api/roles/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Eliminar un rol</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transacciones -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Transacciones</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/transacciones</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener todas las transacciones</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/transacciones/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener una transacción específica</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/transacciones</code>
+                </div>
+                <p class="text-gray-600 mt-2">Crear una nueva transacción</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-yellow-100 text-yellow-700">PUT</span>
+                    <code class="text-gray-700 font-mono">/api/transacciones/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Actualizar una transacción</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-red-100 text-red-700">DELETE</span>
+                    <code class="text-gray-700 font-mono">/api/transacciones/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Eliminar una transacción</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presupuestos -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Presupuestos</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/presupuestos</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener todos los presupuestos</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/presupuestos/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener un presupuesto específico</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/presupuestos</code>
+                </div>
+                <p class="text-gray-600 mt-2">Crear un nuevo presupuesto</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-yellow-100 text-yellow-700">PUT</span>
+                    <code class="text-gray-700 font-mono">/api/presupuestos/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Actualizar un presupuesto</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-red-100 text-red-700">DELETE</span>
+                    <code class="text-gray-700 font-mono">/api/presupuestos/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Eliminar un presupuesto</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recordatorios -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Recordatorios</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/recordatorios</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener todos los recordatorios</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/recordatorios/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener un recordatorio específico</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/recordatorios</code>
+                </div>
+                <p class="text-gray-600 mt-2">Crear un nuevo recordatorio</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-yellow-100 text-yellow-700">PUT</span>
+                    <code class="text-gray-700 font-mono">/api/recordatorios/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Actualizar un recordatorio</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-red-100 text-red-700">DELETE</span>
+                    <code class="text-gray-700 font-mono">/api/recordatorios/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Eliminar un recordatorio</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alertas -->
+        <div class="mb-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Alertas</h2>
+            
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/alertas</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener todas las alertas</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-green-100 text-green-700">GET</span>
+                    <code class="text-gray-700 font-mono">/api/alertas/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Obtener una alerta específica</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-blue-100 text-blue-700">POST</span>
+                    <code class="text-gray-700 font-mono">/api/alertas</code>
+                </div>
+                <p class="text-gray-600 mt-2">Crear una nueva alerta</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-yellow-100 text-yellow-700">PUT</span>
+                    <code class="text-gray-700 font-mono">/api/alertas/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Actualizar una alerta</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 pb-4 border-b border-gray-200">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-1 rounded text-sm font-bold bg-red-100 text-red-700">DELETE</span>
+                    <code class="text-gray-700 font-mono">/api/alertas/:id</code>
+                </div>
+                <p class="text-gray-600 mt-2">Eliminar una alerta</p>
+                <div class="mt-2">
+                    <span class="inline-flex items-center text-sm bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                        🔒 Requiere autenticación
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
