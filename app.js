@@ -16,7 +16,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'http://localhost:3000',
+                url: 'https://financedsapi.onrender.com',
                 description: 'Servidor de desarrollo',
             },
         ],
